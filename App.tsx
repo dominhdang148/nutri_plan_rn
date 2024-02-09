@@ -1,11 +1,9 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import HomeScreen from "./app/screens/home/HomeScreen";
-import { NavigationContainer } from "@react-navigation/native";
-import TabNavigation from "./app/navigations/TabNavigation";
-import RootNavigation from "./app/navigations/RootNavigation";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ProfileScreen from "./app/screens/profile/ProfileScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, View } from "react-native";
+import TabNavigation from "./app/navigations/TabNavigation";
+import MainColors from "./utils/colors/MainColors";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -13,17 +11,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-        <Tab.Navigator
-          initialRouteName="home"
-          screenOptions={
-            {
-              tabBarActiveTintColor: "red"
-            }
-          }
-        >
-          <Tab.Screen name='home' component={HomeScreen} />
-          <Tab.Screen name='profile' component={ProfileScreen} />
-        </Tab.Navigator>
+        <TabNavigation />
       </NavigationContainer>
       <StatusBar style="auto" />
     </View>
@@ -32,13 +20,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tabBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    backgroundColor: MainColors[100],
+
   },
 });

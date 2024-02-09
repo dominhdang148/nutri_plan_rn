@@ -1,17 +1,17 @@
-import { View, Text } from 'react-native'
-import React, { useEffect } from 'react'
-import Sound from '../../../assets/images/sound.svg'
+import React, { useEffect } from 'react';
+import { Text, View } from 'react-native';
+import GlobalStyling from '../../components/GlobalStyling';
 
 export default function HomeScreen() {
     useEffect(() => {
         console.log('hello');
     })
     return (
-        <View>
-            <Text>HomeScreen</Text>
-            <Sound width={30} height={30} />
+        <View style={GlobalStyling.screen}>
+            <Text>Hello</Text>
         </View>
     )
 }
+
 
 
