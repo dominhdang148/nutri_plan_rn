@@ -1,7 +1,16 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import HeartSvg from '../../assets/images/heart.svg';
+import HomeSvg from '../../assets/images/home.svg';
+import MilkSvg from '../../assets/images/milk.svg';
+import PlanSvg from '../../assets/images/plan.svg';
+import ProfileSvg from '../../assets/images/user.svg';
 import MainColors from '../../utils/colors/MainColors';
+import SubColors from '../../utils/colors/SubColors';
+import CuisineScreen from '../screens/cuisine/CuisineScreen';
+import ExerciseScreen from '../screens/exercise/ExerciseScreen';
 import HomeScreen from '../screens/home/HomeScreen';
+import CaloriesScreen from '../screens/planning/PlanningScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 const Tab = createBottomTabNavigator();
 
@@ -11,6 +20,8 @@ export default function TabNavigation() {
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: false,
+                tabBarInactiveTintColor: MainColors[25],
+                tabBarActiveTintColor: SubColors["yellow"],
                 tabBarStyle: {
                     backgroundColor: MainColors[100],
                     marginBottom: 24,
@@ -23,8 +34,51 @@ export default function TabNavigation() {
                 }
             }}
         >
-            <Tab.Screen name='home' component={HomeScreen} />
-            <Tab.Screen name='profile' component={ProfileScreen} />
+            <Tab.Screen
+                name='home'
+                component={HomeScreen}
+                options={{
+                    tabBarIcon: ({ color }) => (
+                        <HomeSvg width={24} height={24} fill={color} />
+                    )
+                }}
+            />
+            <Tab.Screen
+                name="cuisine"
+                component={CuisineScreen}
+                options={{
+                    tabBarIcon: ({ color }) => (
+                        <MilkSvg width={24} height={24} fill={color} />
+                    )
+                }}
+            />
+            <Tab.Screen
+                name="exercise"
+                component={ExerciseScreen}
+                options={{
+                    tabBarIcon: ({ color }) => (
+                        <HeartSvg width={24} height={24} fill={color} />
+                    )
+                }}
+            />
+            <Tab.Screen
+                name="calories"
+                component={CaloriesScreen}
+                options={{
+                    tabBarIcon: ({ color }) => (
+                        <PlanSvg width={24} height={24} fill={color} />
+                    )
+                }}
+            />
+            <Tab.Screen
+                name='profile'
+                component={ProfileScreen}
+                options={{
+                    tabBarIcon: ({ color }) => (
+                        <ProfileSvg width={24} height={24} fill={color} />
+                    )
+                }}
+            />
         </Tab.Navigator>
     );
 }
