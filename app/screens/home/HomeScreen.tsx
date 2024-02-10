@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import GlobalStyling from '../../components/GlobalStyling';
+import Header from './components/Header';
 
 export default function HomeScreen() {
     useEffect(() => {
@@ -8,7 +9,7 @@ export default function HomeScreen() {
     })
     return (
         <View style={GlobalStyling.screen}>
-            <Text>Hello</Text>
+            <Header />
         </View>
     )
 }

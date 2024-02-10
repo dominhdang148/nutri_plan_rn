@@ -5,13 +5,13 @@ import HomeSvg from '../../assets/images/home.svg';
 import MilkSvg from '../../assets/images/milk.svg';
 import PlanSvg from '../../assets/images/plan.svg';
 import ProfileSvg from '../../assets/images/user.svg';
-import MainColors from '../../utils/colors/MainColors';
-import SubColors from '../../utils/colors/SubColors';
 import CuisineScreen from '../screens/cuisine/CuisineScreen';
 import ExerciseScreen from '../screens/exercise/ExerciseScreen';
 import HomeScreen from '../screens/home/HomeScreen';
 import CaloriesScreen from '../screens/planning/PlanningScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
+import MainColors from '../utils/colors/MainColors';
+import SubColors from '../utils/colors/SubColors';
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
