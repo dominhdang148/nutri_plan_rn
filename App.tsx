@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
+import TabNavigation from "./app/navigations/TabNavigation";
 import MainColors from "./app/utils/colors/MainColors";
-import { Raleway } from "./app/utils/constants/FontName";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -19,23 +20,36 @@ export default function App() {
     'poppins-semibold': require("./assets/fonts/poppins/Poppins-SemiBold.ttf"),
     'poppins-bold': require("./assets/fonts/poppins/Poppins-Bold.ttf"),
   });
+
+  if (!fontsLoaded) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+        }}
+      >
+        <ActivityIndicator color={MainColors[25]} size={60} />
+      </View>
+    )
+  }
+
   return (
     <View style={styles.container}>
-      {/* <NavigationContainer>
+
+      <NavigationContainer>
         <TabNavigation />
-      </NavigationContainer> */}
-      <Text style={{
-        fontFamily: Raleway.regular
-      }}>TestingFont</Text>
+      </NavigationContainer>
+
       <StatusBar style="auto" />
     </View>
   );
 }
+
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: MainColors[100],
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

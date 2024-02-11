@@ -9,6 +9,7 @@ export default function HomeScreen() {
     })
     return (
         <View style={GlobalStyling.screen}>
+            {/* Header Section */}
             <Header />
         </View>
     )
