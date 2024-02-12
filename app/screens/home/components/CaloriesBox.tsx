@@ -13,7 +13,6 @@ export default function CaloriesBox() {
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     boxContainer: {
         borderWidth: 1,
@@ -22,9 +21,10 @@ const styles = StyleSheet.create({
         paddingTop: 8,
         marginRight: 8,
         borderRadius: 8,
-        width: "47.5%",
+        flex: 2,
         paddingBottom: 16,
-        paddingLeft: 12
+        paddingLeft: 12,
+
     },
     boxTitle: {
         fontFamily: Raleway.semibold,

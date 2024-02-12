@@ -6,7 +6,7 @@ import WaterBox from './WaterBox'
 
 export default function InfomationBox() {
     return (
-        <View>
+        <View >
             {/* Upper Box */}
             <View style={styles.upperBoxContainer}>
                 <CaloriesBox />
@@ -14,11 +14,12 @@ export default function InfomationBox() {
             </View>
             {/* Bottom Box */}
             <WaterBox />
-        </View>
+        </View >
     )
 }
 
 const styles = StyleSheet.create({
+
     upperBoxContainer: {
         justifyContent: 'space-between',
         flexDirection: 'row',
