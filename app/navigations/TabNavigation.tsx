@@ -10,8 +10,8 @@ import ExerciseScreen from '../screens/exercise/ExerciseScreen';
 import HomeScreen from '../screens/home/HomeScreen';
 import CaloriesScreen from '../screens/planning/PlanningScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
-import MainColors from '../utils/colors/MainColors';
-import SubColors from '../utils/colors/SubColors';
+import { MainColors, SubColors } from '../utils/Colors';
+
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {

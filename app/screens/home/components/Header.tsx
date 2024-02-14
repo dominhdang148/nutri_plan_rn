@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import SearchSvg from '../../../../assets/images/search.svg';
-
 import { Raleway } from '../../../constants/FontName';
-import { MainColors } from '../../../utils/colors';
+import { MainColors } from '../../../utils/Colors';
+
 
 export default function Header() {
     const [val, setVal] = useState();

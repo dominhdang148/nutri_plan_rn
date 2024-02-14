@@ -1,0 +1,1 @@
+export const waterDrops = [250, 500, 750, 1000, 1250, 1500]

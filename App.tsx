@@ -4,7 +4,8 @@ import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 import TabNavigation from "./app/navigations/TabNavigation";
-import MainColors from "./app/utils/colors/MainColors";
+import { MainColors } from "./app/utils/Colors";
+
 
 const Tab = createBottomTabNavigator();
 export default function App() {

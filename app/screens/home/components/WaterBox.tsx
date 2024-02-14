@@ -1,22 +1,28 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import WaterDropSvg from '../../../../assets/images/water_drop.svg'
 import { Poppins, Raleway } from '../../../constants/FontName'
-import { MainColors, SubColors } from '../../../utils/colors'
+import { MainColors, SubColors } from '../../../utils/Colors'
+import { waterDrops } from '../../../utils/Water'
 
 export default function WaterBox() {
-
+    const [drinkTime, setDrinkTime] = useState(0);
 
     return (
-        <View style={styles.boxContainer}>
+        <TouchableOpacity style={styles.boxContainer} onPress={() => { setDrinkTime(drinkTime + 250) }}>
             <View style={styles.textContainer}>
                 <Text style={styles.boxTitle}>Uống nước</Text>
                 <Text style={styles.boxData}>1,5 Lit</Text>
                 <Text style={styles.boxSubtitle}>1 giọt nước = 250ml </Text>
             </View>
-            <View>
-                <Text>Water Session</Text>
+            <View style={styles.iconContainer}>
+                {
+                    waterDrops.map(value => (
+                        <WaterDropSvg width={26} height={26} key={String(value)} fill={drinkTime < value ? MainColors[50] : SubColors.blue} />
+                    ))
+                }
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
@@ -35,7 +41,12 @@ const styles = StyleSheet.create({
         marginLeft: 12,
     },
     iconContainer: {
-
+        flex: 2,
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        marginLeft: 16,
+        marginRight: 16,
+        flexDirection: 'row',
     },
     boxTitle: {
         fontFamily: Raleway.semibold,

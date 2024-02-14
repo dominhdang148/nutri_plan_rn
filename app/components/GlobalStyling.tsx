@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
-import MainColors from "../utils/colors/MainColors";
+import { MainColors } from "../utils/Colors";
+
 
 export default StyleSheet.create({
     screen: {
