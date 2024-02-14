@@ -1,8 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import MainColors from '../../../utils/colors/MainColors'
-import SubColors from '../../../utils/colors/SubColors'
-import { Poppins, Raleway } from '../../../utils/constants/FontName'
+import { Poppins, Raleway } from '../../../constants/FontName'
+import { MainColors, SubColors } from '../../../utils/colors'
 
 export default function ExerciseBox() {
     return (
