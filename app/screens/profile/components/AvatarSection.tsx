@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import { Raleway } from '../../../utils/constants/FontName'
+import { Raleway } from '../../../constants/FontName'
 
 export default function AvatarSection() {
     return (
