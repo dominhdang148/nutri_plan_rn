@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import SearchSvg from '../../../../assets/images/search.svg';
 import { Raleway } from '../../../constants/FontName';
 import { MainColors } from '../../../utils/Colors';
 
-
-export default function Header() {
-    const [val, setVal] = useState();
+const Header: React.FC = () => {
     return (
         <View>
             {/* Title Section */}
@@ -26,6 +24,8 @@ export default function Header() {
         </View>
     )
 }
+
+export default Header;
 
 const styles = StyleSheet.create({
     headerContainer: {

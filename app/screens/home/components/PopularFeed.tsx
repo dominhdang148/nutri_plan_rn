@@ -2,9 +2,10 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Raleway } from '../../../constants/FontName'
 
-export default function PopularFeed() {
+const PopularFeed: React.FC = () => {
     return (
         <View style={styles.container}>
+
             {/* Heading session */}
             <Text style={styles.heading}>Nổi bật</Text>
 
@@ -14,10 +15,12 @@ export default function PopularFeed() {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 42
+        marginTop: 42,
     },
     heading: {
         fontFamily: Raleway.bold,
         fontSize: 20
     }
 })
+
+export default PopularFeed;

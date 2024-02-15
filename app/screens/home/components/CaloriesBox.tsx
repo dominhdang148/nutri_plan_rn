@@ -3,9 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Poppins, Raleway } from '../../../constants/FontName'
 import { MainColors, SubColors } from '../../../utils/Colors'
 
-
-
-export default function CaloriesBox() {
+const CaloriesBox = () => {
     return (
         <View style={styles.boxContainer}>
             <Text style={styles.boxTitle}>Dinh dưỡng</Text>
@@ -14,6 +12,9 @@ export default function CaloriesBox() {
         </View>
     )
 }
+
+export default CaloriesBox
+
 const styles = StyleSheet.create({
     boxContainer: {
         borderWidth: 1,

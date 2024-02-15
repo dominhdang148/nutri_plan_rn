@@ -5,7 +5,7 @@ import Header from './components/Header';
 import InfomationBox from './components/InfomationBox';
 import PopularFeed from './components/PopularFeed';
 
-export default function HomeScreen() {
+const HomeScreen: React.FC = () => {
     return (
         <View style={GlobalStyling.screen}>
             {/* Header Section */}
@@ -19,3 +19,5 @@ export default function HomeScreen() {
         </View>
     )
 }
+
+export default HomeScreen;

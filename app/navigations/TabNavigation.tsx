@@ -14,7 +14,7 @@ import { MainColors, SubColors } from '../utils/Colors';
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNavigation() {
+const TabNavigation: React.FC = () => {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -82,3 +82,5 @@ export default function TabNavigation() {
         </Tab.Navigator>
     );
 }
+
+export default TabNavigation;

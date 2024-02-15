@@ -6,7 +6,7 @@ import { Poppins, Raleway } from '../../../constants/FontName'
 import { MainColors, SubColors } from '../../../utils/Colors'
 import { waterDrops } from '../../../utils/Water'
 
-export default function WaterBox() {
+const WaterBox: React.FC = () => {
     const [drinkTime, setDrinkTime] = useState(0);
 
     return (
@@ -41,6 +41,7 @@ export default function WaterBox() {
         </View>
     )
 }
+
 
 const styles = StyleSheet.create({
     boxContainer: {
@@ -91,3 +92,5 @@ const styles = StyleSheet.create({
         color: MainColors[25]
     }
 })
+
+export default WaterBox;

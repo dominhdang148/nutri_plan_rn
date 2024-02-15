@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Poppins, Raleway } from '../../../constants/FontName'
 import { MainColors, SubColors } from '../../../utils/Colors'
 
-export default function ExerciseBox() {
+const ExerciseBox: React.FC = () => {
     return (
         <View style={styles.boxContainer}>
             <Text style={styles.boxTitle}>Tập luyện</Text>
@@ -12,6 +12,8 @@ export default function ExerciseBox() {
         </View>
     )
 }
+
+export default ExerciseBox;
 
 const styles = StyleSheet.create({
     boxContainer: {

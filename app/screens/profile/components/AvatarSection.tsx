@@ -2,7 +2,7 @@ import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { Raleway } from '../../../constants/FontName'
 
-export default function AvatarSection() {
+const AvatarSection: React.FC = () => {
     return (
         <View style={styles.avatarContainer}>
             <Image source={require('../../../../assets/images/ayaka.jpg')} style={styles.avatarImage} />
@@ -10,6 +10,8 @@ export default function AvatarSection() {
         </View>
     )
 }
+
+export default AvatarSection;
 
 const styles = StyleSheet.create({
     avatarContainer: {

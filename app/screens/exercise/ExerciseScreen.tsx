@@ -1,10 +1,14 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
-export default function ExerciseScreen() {
+const ExerciseScreen: React.FC = () => {
     return (
         <View>
             <Text>ExerciseScreen</Text>
         </View>
     )
 }
+
+export default ExerciseScreen
+
+const styles = StyleSheet.create({})

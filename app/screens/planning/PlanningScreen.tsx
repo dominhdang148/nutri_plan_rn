@@ -1,10 +1,14 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
-export default function CaloriesScreen() {
+const PlanningScreen: React.FC = () => {
     return (
-        <View >
-            <Text>CaloriesScreen</Text>
+        <View>
+            <Text>PlanningScreen</Text>
         </View>
     )
 }
+
+export default PlanningScreen
+
+const styles = StyleSheet.create({})

@@ -4,7 +4,7 @@ import CaloriesBox from './CaloriesBox'
 import ExerciseBox from './ExerciseBox'
 import WaterBox from './WaterBox'
 
-export default function InfomationBox() {
+const InfomationBox: React.FC = () => {
     return (
         <View >
             {/* Upper Box */}
@@ -17,6 +17,8 @@ export default function InfomationBox() {
         </View >
     )
 }
+
+export default InfomationBox;
 
 const styles = StyleSheet.create({
 
