@@ -1,13 +1,12 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 import TabNavigation from "./app/navigations/TabNavigation";
+import WelcomeNavigation from "./app/navigations/WelcomeNavigation";
 import { MainColors } from "./app/utils/Colors";
 
 
-const Tab = createBottomTabNavigator();
 export default function App() {
   const [fontsLoaded] = useFonts({
     // Raleway Font
@@ -22,6 +21,8 @@ export default function App() {
     'poppins-bold': require("./assets/fonts/poppins/Poppins-Bold.ttf"),
   });
 
+  const user: User | null = null;
+
   if (!fontsLoaded) {
     return (
       <View
@@ -33,6 +34,19 @@ export default function App() {
         <ActivityIndicator color={MainColors[25]} size={60} />
       </View>
     )
+  }
+
+  if (user === null) {
+    return (
+      <View style={styles.container}>
+
+        <NavigationContainer>
+          <WelcomeNavigation />
+        </NavigationContainer>
+
+        <StatusBar style="auto" />
+      </View>
+    );
   }
 
   return (

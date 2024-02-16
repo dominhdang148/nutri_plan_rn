@@ -1,11 +1,11 @@
-export const MainColors: Record<string, string> = {
+export const MainColors = {
     0: "#000000",
     25: "#959595",
     50: "#D9D9D9",
     75: "#F5F5F5",
     100: '#FFFFFF',
 };
-export const SubColors: Record<string, string> = {
+export const SubColors = {
     "blue": "#558EC5",
     "brown": "#652B1E",
     "pink": "#EE9CD2",
