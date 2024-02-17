@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { User } from "../model/user";
+import { User } from "../model/User";
 
 
 export const saveUser = async (user: User): Promise<boolean> => {

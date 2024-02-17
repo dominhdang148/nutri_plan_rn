@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 import { Raleway } from '../../../constants/FontName'
-import { Gender, User } from '../../../model/user'
+import { Gender, User } from '../../../model/User'
 import { saveUser } from '../../../services/LocalStorage'
 import { MainColors, SubColors } from '../../../utils/Colors'
 

@@ -1,13 +1,9 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 import SplashNavigation from "./app/navigations/SplashNavigation";
 import { MainColors } from "./app/utils/Colors";
-
-
 
 export default function App() {
 
@@ -28,18 +24,18 @@ export default function App() {
 
 
   //TODO: Delete useEffect()
-  useEffect(() => {
-    clearAllData();
-  }, [])
+  // useEffect(() => {
+  //   clearAllData();
+  // }, [])
 
-  const clearAllData = async () => {
-    try {
-      await AsyncStorage.clear();
-      console.log("Deleted successfully");
-    } catch (error) {
-      console.log("Error while deleting data: " + error)
-    }
-  }
+  // const clearAllData = async () => {
+  //   try {
+  //     await AsyncStorage.clear();
+  //     console.log("Deleted successfully");
+  //   } catch (error) {
+  //     console.log("Error while deleting data: " + error)
+  //   }
+  // }
 
 
   if (!fontsLoaded) {

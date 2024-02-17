@@ -21,12 +21,13 @@ export default AvatarSection;
 const styles = StyleSheet.create({
     avatarContainer: {
         width: "100%",
+        marginTop: 56,
+        marginBottom: 20,
         alignItems: 'center',
     },
     avatarImage: {
         width: 120,
         height: 120,
-        marginTop: 56,
         marginBottom: 20,
         borderRadius: 100
     },

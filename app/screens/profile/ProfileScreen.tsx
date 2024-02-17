@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import GlobalStyling from '../../components/GlobalStyling';
-import { User } from '../../model/user';
+import { User } from '../../model/User';
 import { getUser } from '../../services/LocalStorage';
 import AvatarSection from './components/AvatarSection';
+import ProfileDetail from './components/ProfileDetail';
 
 
 const ProfileScreen: React.FC = () => {
@@ -25,6 +26,7 @@ const ProfileScreen: React.FC = () => {
     return (
         <View style={GlobalStyling.screen}>
             <AvatarSection name={currentUser?.name} />
+            <ProfileDetail user={currentUser} />
         </View>
     )
 }
