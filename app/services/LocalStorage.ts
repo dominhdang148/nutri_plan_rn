@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { User } from "../model/user";
 
 
 export const saveUser = async (user: User): Promise<boolean> => {
@@ -14,17 +15,32 @@ export const saveUser = async (user: User): Promise<boolean> => {
 }
 
 
-export const getUser = async (): Promise<string | null> => {
+export const getUser = async (): Promise<LocalStorageRespone> => {
     try {
         const user: string | null = await AsyncStorage.getItem('appuser');
-        console.log(user)
-        return user;
+        if (user !== null) {
+            return {
+                status: 'success',
+                message: 'Get user successfully',
+                data: JSON.parse(user),
+            }
+
+        }
+        else {
+            return {
+                status: 'failed',
+                message: 'user not found',
+                data: null
+            }
+        }
     } catch (error) {
-        console.log(`Error while getting data: ${error}`);
-        return null
+        return {
+            status: 'failed',
+            message: `error while getting data: ${error}`,
+            data: null
+        }
     }
 }
-
 
 
 

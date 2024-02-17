@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 import { Raleway } from '../../../constants/FontName'
+import { Gender, User } from '../../../model/user'
 import { saveUser } from '../../../services/LocalStorage'
 import { MainColors, SubColors } from '../../../utils/Colors'
 
@@ -32,7 +33,6 @@ const FormBody: React.FC = () => {
         }
         saveUser(user).then((res) => {
             if (res) {
-                console.log('success');
                 navigation.replace('splash');
             }
         })

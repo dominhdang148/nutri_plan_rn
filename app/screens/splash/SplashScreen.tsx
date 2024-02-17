@@ -12,8 +12,8 @@ const SplashScreen: React.FC = () => {
     }, [])
 
     const checkUserExist = async (): Promise<void> => {
-        const user = await getUser();
-        if (user) {
+        const result: LocalStorageRespone = await getUser();
+        if (result?.status === 'success') {
             navigation.replace('main')
         } else {
             navigation.replace('getinfo')

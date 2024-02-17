@@ -2,11 +2,16 @@ import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { Raleway } from '../../../constants/FontName'
 
-const AvatarSection: React.FC = () => {
+
+interface AvatarComponentProp {
+    name: string | undefined
+}
+
+const AvatarSection: React.FC<AvatarComponentProp> = (prop: AvatarComponentProp) => {
     return (
         <View style={styles.avatarContainer}>
             <Image source={require('../../../../assets/images/ayaka.jpg')} style={styles.avatarImage} />
-            <Text style={styles.avatarName}>Đỗ Minh Đăng</Text>
+            <Text style={styles.avatarName}>{prop.name}</Text>
         </View>
     )
 }
