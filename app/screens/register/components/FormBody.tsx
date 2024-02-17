@@ -1,19 +1,42 @@
 import { Picker } from '@react-native-picker/picker'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 import React, { useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 import { Raleway } from '../../../constants/FontName'
+import { saveUser } from '../../../services/LocalStorage'
 import { MainColors, SubColors } from '../../../utils/Colors'
 
-const genders: object[] = [
-    { label: 'Khác', value: 0 },
-    { label: 'Nam', value: 1 },
-    { label: 'Nữ', value: 2 },
+
+const genders: Gender[] = [
+    { type: 0, value: "Khác" },
+    { type: 1, value: "Nam" },
+    { type: 2, value: "Nữ" },
 ]
 
 const FormBody: React.FC = () => {
-    const [genderValue, setGenderValue] = useState(0);
+    const [name, setName] = useState<string>('')
+    const [genderValue, setGenderValue] = useState<number>(0);
+    const [height, setHeight] = useState<number>(0)
+    const [weight, setWeight] = useState<number>(0)
 
+
+    const navigation = useNavigation<StackNavigationProp<any>>()
+    const onPress = (): void => {
+        const user: User = {
+            name: name,
+            gender: genders[genderValue],
+            height: height,
+            weight: weight,
+        }
+        saveUser(user).then((res) => {
+            if (res) {
+                console.log('success');
+                navigation.replace('splash');
+            }
+        })
+    }
     return (
         <View style={styles.bodyContainer}>
             <View style={styles.fieldContainer}>
@@ -21,6 +44,8 @@ const FormBody: React.FC = () => {
                 <TextInput
                     placeholder='Nhập tên của bạn'
                     placeholderTextColor={MainColors[25]}
+                    onChangeText={(val: string) => setName(val)}
+                    defaultValue={name}
                     style={styles.formField}
                 />
             </View>
@@ -49,6 +74,8 @@ const FormBody: React.FC = () => {
                 <TextInput
                     placeholder='Nhập chiều cao của bạn'
                     placeholderTextColor={MainColors[25]}
+                    onChangeText={(val: string) => setHeight(Number(val))}
+                    defaultValue={height?.toString()}
                     style={styles.formField}
                 />
             </View>
@@ -57,10 +84,14 @@ const FormBody: React.FC = () => {
                 <TextInput
                     placeholder='Nhập cân nặng của bạn'
                     placeholderTextColor={MainColors[25]}
+                    onChangeText={(val: string) => setWeight(Number(val))}
+                    defaultValue={weight?.toString()}
                     style={styles.formField}
                 />
             </View>
-            <TouchableOpacity style={styles.submitButton}>
+            <TouchableOpacity style={styles.submitButton}
+                onPress={onPress}
+            >
                 <Text style={styles.buttonText}>Bắt đầu</Text>
             </TouchableOpacity>
         </View>

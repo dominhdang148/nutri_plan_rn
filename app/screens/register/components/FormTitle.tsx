@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Raleway } from '../../../constants/FontName'
 import { MainColors } from '../../../utils/Colors'
 
-const FormTitle = () => {
+const FormTitle: React.FC = () => {
     return (
         <View>
             <Text style={styles.title}>Chỉ số BMI</Text>

@@ -1,13 +1,18 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
+import { useEffect } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
-import TabNavigation from "./app/navigations/TabNavigation";
-import WelcomeNavigation from "./app/navigations/WelcomeNavigation";
+import SplashNavigation from "./app/navigations/SplashNavigation";
 import { MainColors } from "./app/utils/Colors";
 
 
+
 export default function App() {
+
+
+
   const [fontsLoaded] = useFonts({
     // Raleway Font
     'raleway-regular': require("./assets/fonts/raleway/Raleway-Regular.ttf"),
@@ -21,7 +26,21 @@ export default function App() {
     'poppins-bold': require("./assets/fonts/poppins/Poppins-Bold.ttf"),
   });
 
-  const user: User | null = null;
+
+  //TODO: Delete useEffect()
+  useEffect(() => {
+    clearAllData();
+  }, [])
+
+  const clearAllData = async () => {
+    try {
+      await AsyncStorage.clear();
+      console.log("Deleted successfully");
+    } catch (error) {
+      console.log("Error while deleting data: " + error)
+    }
+  }
+
 
   if (!fontsLoaded) {
     return (
@@ -36,25 +55,14 @@ export default function App() {
     )
   }
 
-  if (user === null) {
-    return (
-      <View style={styles.container}>
-
-        <NavigationContainer>
-          <WelcomeNavigation />
-        </NavigationContainer>
-
-        <StatusBar style="auto" />
-      </View>
-    );
-  }
-
   return (
     <View style={styles.container}>
 
       <NavigationContainer>
-        <TabNavigation />
+        <SplashNavigation />
       </NavigationContainer>
+
+
 
       <StatusBar style="auto" />
     </View>

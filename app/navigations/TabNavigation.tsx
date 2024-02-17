@@ -17,6 +17,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigation: React.FC = () => {
     return (
         <Tab.Navigator
+            initialRouteName='home'
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: false,

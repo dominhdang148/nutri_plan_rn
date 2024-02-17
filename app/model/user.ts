@@ -8,5 +8,4 @@ interface User {
     gender: Gender,
     height: number,
     weight: number,
-
 }

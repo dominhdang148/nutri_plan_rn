@@ -4,7 +4,7 @@ import { MainColors } from '../../../utils/Colors'
 import FormBody from './FormBody'
 import FormTitle from './FormTitle'
 
-const BMIForm = () => {
+const BMIForm: React.FC = () => {
     return (
         <View style={styles.formContainer}>
             <FormTitle />
