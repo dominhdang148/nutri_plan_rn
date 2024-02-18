@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import DashedLine from 'react-native-dashed-line';
 import { Poppins, Raleway } from '../../../constants/FontName';
 import { User } from '../../../model/User';
@@ -26,7 +26,18 @@ const ProfileDetail = (prop: ProfileDetailProp) => {
 
             {/* Infomation Section */}
             <View style={styles.infomationContainer}>
-
+                <View style={styles.fieldContainer}>
+                    <Text style={styles.label}>Giới tính</Text>
+                    <TextInput editable={false} value={prop.user.gender.value} style={styles.informationField} />
+                </View>
+                <View style={styles.fieldContainer}>
+                    <Text style={styles.label}>Chiều cao</Text>
+                    <TextInput editable={false} value={prop.user.height.toString() + ' cm'} style={styles.informationField} />
+                </View>
+                <View style={styles.fieldContainer}>
+                    <Text style={styles.label}>Cân nặng</Text>
+                    <TextInput editable={false} value={prop.user.weight.toString() + ' kg'} style={styles.informationField} />
+                </View>
             </View>
 
             {/* SeparateLine */}
@@ -85,5 +96,25 @@ const styles = StyleSheet.create({
     infomationContainer: {
         marginBottom: 20,
     },
+    label: {
+        fontFamily: Raleway.bold,
+        fontSize: 14,
+    },
+    fieldContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 9
+    },
+    informationField: {
+        backgroundColor: MainColors[75],
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        color: MainColors[0],
+        fontSize: 12,
+        borderRadius: 6,
+        width: '70%'
+    }
+
 
 })
