@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import DashedLine from 'react-native-dashed-line';
 import { Poppins, Raleway } from '../../../constants/FontName';
 import { User } from '../../../model/User';
 import { BMICalculator } from '../../../utils/BMICalculator';
@@ -12,6 +13,8 @@ type ProfileDetailProp = {
 const ProfileDetail = (prop: ProfileDetailProp) => {
     return (
         <View style={styles.detailContainer}>
+
+            {/* BMI section */}
             <View style={styles.bmiRow}>
                 <View >
                     <Text style={styles.bmiTitle}>Chỉ số BMI</Text>
@@ -19,6 +22,23 @@ const ProfileDetail = (prop: ProfileDetailProp) => {
                 </View>
                 <Text style={styles.bmiBox}>{BMICalculator(prop.user.weight, prop.user.height)}</Text>
             </View>
+
+
+            {/* Infomation Section */}
+            <View style={styles.infomationContainer}>
+
+            </View>
+
+            {/* SeparateLine */}
+            {/* <View style={styles.horizontalRule}>
+
+            </View> */}
+            <DashedLine dashLength={5} dashColor={MainColors[50]} dashGap={5} style={{ marginHorizontal: -16 }} />
+            {/* Status Section */}
+            <View>
+
+            </View>
+
         </View>
     )
 }
@@ -61,5 +81,9 @@ const styles = StyleSheet.create({
         fontSize: 16,
         includeFontPadding: false,
         textAlignVertical: 'center'
-    }
+    },
+    infomationContainer: {
+        marginBottom: 20,
+    },
+
 })
