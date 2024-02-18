@@ -26,28 +26,37 @@ const ProfileDetail = (prop: ProfileDetailProp) => {
 
             {/* Infomation Section */}
             <View style={styles.infomationContainer}>
-                <View style={styles.fieldContainer}>
+                <View style={styles.informationFieldContainer}>
                     <Text style={styles.label}>Giới tính</Text>
                     <TextInput editable={false} value={prop.user.gender.value} style={styles.informationField} />
                 </View>
-                <View style={styles.fieldContainer}>
+                <View style={styles.informationFieldContainer}>
                     <Text style={styles.label}>Chiều cao</Text>
                     <TextInput editable={false} value={prop.user.height.toString() + ' cm'} style={styles.informationField} />
                 </View>
-                <View style={styles.fieldContainer}>
+                <View style={styles.informationFieldContainer}>
                     <Text style={styles.label}>Cân nặng</Text>
                     <TextInput editable={false} value={prop.user.weight.toString() + ' kg'} style={styles.informationField} />
                 </View>
             </View>
 
             {/* SeparateLine */}
-            {/* <View style={styles.horizontalRule}>
-
-            </View> */}
             <DashedLine dashLength={5} dashColor={MainColors[50]} dashGap={5} style={{ marginHorizontal: -16 }} />
-            {/* Status Section */}
-            <View>
 
+            {/* Status Section */}
+            <View style={styles.statusContainer}>
+                <View style={styles.statusFieldContainer}>
+                    <Text style={styles.label}>Trạng thái</Text>
+                    <TextInput editable={false} value={'Bình thường'} style={styles.statusField} />
+                </View>
+                <View style={styles.statusFieldContainer}>
+                    <Text style={styles.label}>Lượng nước cần uống</Text>
+                    <TextInput editable={false} value={'1.5 L'} style={styles.statusField} />
+                </View>
+                <View style={styles.statusFieldContainer}>
+                    <Text style={styles.label}>Thực phẩm cần kiêng</Text>
+                    <TextInput editable={false} value={'Không'} style={styles.statusField} />
+                </View>
             </View>
 
         </View>
@@ -100,7 +109,7 @@ const styles = StyleSheet.create({
         fontFamily: Raleway.bold,
         fontSize: 14,
     },
-    fieldContainer: {
+    informationFieldContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -114,7 +123,25 @@ const styles = StyleSheet.create({
         fontSize: 12,
         borderRadius: 6,
         width: '70%'
+    },
+    statusContainer: {
+        marginTop: 20
+    },
+    statusFieldContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: 9,
+    },
+    statusField: {
+        backgroundColor: MainColors[100],
+        borderWidth: 1,
+        borderColor: MainColors[75],
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        color: MainColors[0],
+        fontSize: 12,
+        borderRadius: 6,
+        width: '45%'
     }
-
-
 })
