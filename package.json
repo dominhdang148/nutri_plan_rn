@@ -18,6 +18,8 @@
     "expo": "~50.0.6",
     "expo-font": "^11.10.2",
     "expo-status-bar": "~1.11.1",
+    "graphql": "^15.8.0",
+    "graphql-request": "^6.1.0",
     "react-native": "0.73.4",
     "react-native-dashed-line": "^1.1.0",
     "react-native-element-dropdown": "^2.10.1",
