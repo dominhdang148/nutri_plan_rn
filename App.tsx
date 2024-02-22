@@ -23,7 +23,7 @@ export default function App() {
   });
 
 
-  //TODO: Delete useEffect()
+  //TODO: Delete user data right after reloading app .Used for testing only
   // useEffect(() => {
   //   clearAllData();
   // }, [])
