@@ -1,8 +1,18 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { Raleway } from '../../../constants/FontName'
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Raleway } from '../../../constants/FontName';
+import HygraphAPI from '../../../services/HygraphAPI';
 
 const PopularFeed: React.FC = () => {
+    useEffect(() => {
+        getPopularFeeds();
+    }, []);
+
+    const getPopularFeeds = () => {
+        HygraphAPI.getPopularFeeds().then((response) => {
+            console.log(response);
+        })
+    }
     return (
         <View style={styles.container}>
 
