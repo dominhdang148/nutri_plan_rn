@@ -1,7 +1,7 @@
 interface PopularFeed {
-    id: String,
-    title: String,
+    id: string,
+    title: string,
     image: {
-        url: String,
+        url: string,
     }
 }

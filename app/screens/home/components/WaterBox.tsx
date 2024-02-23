@@ -7,7 +7,7 @@ import { MainColors, SubColors } from '../../../utils/Colors'
 import { waterDrops } from '../../../utils/Water'
 
 const WaterBox: React.FC = () => {
-    const [drinkTime, setDrinkTime] = useState(0);
+    const [drinkTime, setDrinkTime] = useState<number>(0);
 
     return (
         <View style={styles.boxContainer}>
