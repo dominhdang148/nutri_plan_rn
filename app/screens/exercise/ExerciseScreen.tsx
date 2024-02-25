@@ -1,9 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import GlobalStyling from '../../components/GlobalStyling'
 
 const ExerciseScreen: React.FC = () => {
     return (
-        <View>
+        <View style={GlobalStyling.screen}>
             <Text>ExerciseScreen</Text>
         </View>
     )

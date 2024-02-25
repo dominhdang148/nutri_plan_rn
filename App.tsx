@@ -22,22 +22,6 @@ export default function App() {
     'poppins-bold': require("./assets/fonts/poppins/Poppins-Bold.ttf"),
   });
 
-
-  //TODO: Delete user data right after reloading app .Used for testing only
-  // useEffect(() => {
-  //   clearAllData();
-  // }, [])
-
-  // const clearAllData = async () => {
-  //   try {
-  //     await AsyncStorage.clear();
-  //     console.log("Deleted successfully");
-  //   } catch (error) {
-  //     console.log("Error while deleting data: " + error)
-  //   }
-  // }
-
-
   if (!fontsLoaded) {
     return (
       <View
@@ -53,13 +37,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
       <NavigationContainer>
         <SplashNavigation />
+
       </NavigationContainer>
-
-
-
       <StatusBar style="auto" />
     </View>
   );
