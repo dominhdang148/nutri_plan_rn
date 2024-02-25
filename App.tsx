@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { ScrollPositionProvider } from "./app/components/ScrollPositionProvider";
 import SplashNavigation from "./app/navigations/SplashNavigation";
 import { MainColors } from "./app/utils/Colors";
 
@@ -38,8 +39,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-        <SplashNavigation />
-
+        <ScrollPositionProvider>
+          <SplashNavigation />
+        </ScrollPositionProvider>
       </NavigationContainer>
       <StatusBar style="auto" />
     </View>

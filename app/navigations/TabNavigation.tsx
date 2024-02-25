@@ -1,12 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useIsFocused } from '@react-navigation/native';
-import React, { useRef, useState } from 'react';
-import { NativeScrollEvent, NativeSyntheticEvent, ScrollView } from 'react-native';
+import React from 'react';
 import HeartSvg from '../../assets/images/heart.svg';
 import HomeSvg from '../../assets/images/home.svg';
 import MilkSvg from '../../assets/images/milk.svg';
 import PlanSvg from '../../assets/images/plan.svg';
 import ProfileSvg from '../../assets/images/user.svg';
+import { useScrollPosition } from '../components/ScrollPositionProvider';
 import CuisineScreen from '../screens/cuisine/CuisineScreen';
 import ExerciseScreen from '../screens/exercise/ExerciseScreen';
 import HomeScreen from '../screens/home/HomeScreen';
@@ -17,14 +16,7 @@ import { MainColors, SubColors } from '../utils/Colors';
 const Tab = createBottomTabNavigator();
 
 const TabNavigation: React.FC = () => {
-    const scrollViewRef = useRef<ScrollView>(null);
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const isFocused = useIsFocused(); // Determine if the screen is focused
-
-    const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-        const currentScrollPos: number = event.nativeEvent.contentOffset.y;
-        setPrevScrollPos(currentScrollPos);
-    };
+    const { scrollPosition } = useScrollPosition();
 
     return (
         <Tab.Navigator
@@ -43,7 +35,7 @@ const TabNavigation: React.FC = () => {
                     position: 'absolute',
                     elevation: 5,
                     shadowOpacity: 0.1,
-                    display: prevScrollPos === 0 ? 'flex' : 'none' // Hide the BottomTabNavigator while scrolling
+                    display: scrollPosition === 0 ? 'flex' : 'none' // Hide the BottomTabNavigator while scrolling
                 }
             }}
         >
