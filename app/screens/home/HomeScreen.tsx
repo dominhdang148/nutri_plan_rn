@@ -26,9 +26,6 @@ const HomeScreen: React.FC = () => {
             >
                 <InfomationBox />
                 <PopularFeed />
-                <PopularFeed />
-                <PopularFeed />
-                <PopularFeed />
             </ScrollView>
         </View>
     );

@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react';
+import React, { useEffect } from 'react';
 import HeartSvg from '../../assets/images/heart.svg';
 import HomeSvg from '../../assets/images/home.svg';
 import MilkSvg from '../../assets/images/milk.svg';
@@ -16,8 +16,24 @@ import { MainColors, SubColors } from '../utils/Colors';
 const Tab = createBottomTabNavigator();
 
 const TabNavigation: React.FC = () => {
-    const { scrollPosition } = useScrollPosition();
+    const { scrollPosition, setScrollPosition } = useScrollPosition();
+    const [showTabBar, setShowTabBar] = React.useState(true);
 
+    useEffect(() => {
+        if (scrollPosition > 0) {
+
+            setShowTabBar(false);
+
+
+            const timeout = setTimeout(() => {
+                setShowTabBar(true);
+            }, 1000);
+
+            return () => clearTimeout(timeout);
+        } else {
+            setShowTabBar(true);
+        }
+    }, [scrollPosition]);
     return (
         <Tab.Navigator
             initialRouteName='home'
@@ -35,7 +51,9 @@ const TabNavigation: React.FC = () => {
                     position: 'absolute',
                     elevation: 5,
                     shadowOpacity: 0.1,
-                    display: scrollPosition === 0 ? 'flex' : 'none' // Hide the BottomTabNavigator while scrolling
+                    // display: scrollPosition === 0 ? 'flex' : 'none' // Hide the BottomTabNavigator while scrolling
+                    display: showTabBar ? 'flex' : 'none',
+
                 }
             }}
         >
